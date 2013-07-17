@@ -10,6 +10,7 @@ public abstract class MediaType extends AbstractEntity implements IMediaType {
      * @return type
      */
     public String getType() {
+        
         return type;
     }
 
