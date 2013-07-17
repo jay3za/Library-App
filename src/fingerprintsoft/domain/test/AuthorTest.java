@@ -1,7 +1,7 @@
 package fingerprintsoft.domain.test;
 
 import fingerprintsoft.domain.Author;
-import junit.framework.TestCase;
+import junit.framework.TestCase;//impoty junit4
 
 /**
  * @author jackie
