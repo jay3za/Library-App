@@ -1,4 +1,3 @@
-
 package fingerprintsoft.utilities;
 
 import java.util.Iterator;

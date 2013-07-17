@@ -1,7 +1,9 @@
 package fingerprintsoft.domain.interfaces;
 
 import fingerprintsoft.domain.Category;
-
+/**
+ * @author Jackie
+ */
 public interface ICategory extends IEntity {
 
     /**

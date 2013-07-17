@@ -1,7 +1,9 @@
 package fingerprintsoft.domain.interfaces;
 
 import fingerprintsoft.domain.Book;
-
+/**
+ * @author Jackie
+ */
 public interface IBook extends IEntity {
 
     /**

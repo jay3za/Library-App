@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 //import org.postgresql.util.PSQLException;
-
+/**
+ * @author Jackie
+ */
 
 public class LibraryMain {
 	public static final String URL_STRING = "jdbc:postgresql://localhost:5432/dbadmin";

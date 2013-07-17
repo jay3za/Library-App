@@ -1,7 +1,6 @@
 package fingerprintsoft.resource.test;
 
 import org.junit.experimental.categories.Categories;
-
 import fingerprintsoft.domain.Category;
 import fingerprintsoft.domain.interfaces.ICategory;
 import fingerprintsoft.resource.JDBCCategoryResource;

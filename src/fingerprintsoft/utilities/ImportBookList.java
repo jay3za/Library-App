@@ -2,7 +2,9 @@ package fingerprintsoft.utilities;
 
 import java.util.Iterator;
 import java.util.List;
-
+/**
+ * @author Jackie
+ */
 public class ImportBookList {
 	public static void importBookNameList(List books) throws Exception{
 	

@@ -3,7 +3,9 @@ package fingerprintsoft.utilities;
 //import java.util.ArrayList;
 
 import java.util.*;
-
+/**
+ * @author Jackie
+ */
 public class ImportAuthorList{
 	public static void importAuthorList(List authors) throws Exception	{
 		/*   // Just another way to iterate through authors

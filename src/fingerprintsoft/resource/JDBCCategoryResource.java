@@ -103,8 +103,8 @@ public class JDBCCategoryResource implements ICategoryResource {
             conn.close();
 		 }catch(SQLException se){
 			 se.printStackTrace();
-		}//end finally try
-	}//end try
+			}//end finally try
+		}//end try
     }
 
     /**
@@ -145,5 +145,47 @@ public class JDBCCategoryResource implements ICategoryResource {
 		
         return null;
     }
+/**
+ * netbeans IDE implemented these
+ */
+	@Override
+	public List findCategory() {
+		return null;
+	}
+/**
+ * netbeans IDE implemented these
+ */
+	@Override
+	public List findCategory(String name) {
+		return null;
+	}
+/**
+ * netbeans IDE implemented these
+ */
+	@Override
+	public void insert(ICategory category) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans IDE implemented these
+ */
+	@Override
+	public void update(ICategory category) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans IDE implemented these
+ */
+	@Override
+	public ICategory delete(Long id) {
+		return null;
+	}
+/**
+ * netbeans IDE implemented these
+ */
+	@Override
+	public ICategory getCategory(Long id) {
+		return null;
+	}
 
 }
