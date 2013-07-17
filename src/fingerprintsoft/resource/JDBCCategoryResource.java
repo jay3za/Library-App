@@ -20,9 +20,7 @@ import java.sql.Statement;
  */
 public class JDBCCategoryResource implements ICategoryResource {
 	Statement stm=null;
-	//Connection conn=null;
-	//Creating connection with the database
-			Connection conn = LibraryConnection.getConnection();
+	Connection conn = LibraryConnection.getConnection();
 			
     /**
      * Fetches a list of categories from Category
@@ -147,42 +145,5 @@ public class JDBCCategoryResource implements ICategoryResource {
 		
         return null;
     }
-
-    /**
-     * @see fingerprintsoft.resource.interfaces.ICategoryResource#findCategory(java.lang.String)
-     */
-    public List findCategory(String name) {
-        return null;
-    }
-
-    /**
-     * @see fingerprintsoft.resource.interfaces.ICategoryResource#insert(fingerprintsoft.domain.interfaces.ICategory)
-     */
-    public void insert(ICategory category) {
-    }
-
-    /**
-     * @see fingerprintsoft.resource.interfaces.ICategoryResource#update(fingerprintsoft.domain.interfaces.ICategory)
-     */
-    public void update(ICategory category) {
-    }
-
-    /**
-     * @see fingerprintsoft.resource.interfaces.ICategoryResource#delete(java.lang.Long)
-     */
-    public ICategory delete(Long id) {
-        return null;
-    }
-
-    /**
-     * @see fingerprintsoft.resource.interfaces.ICategoryResource#getCategory(java.lang.Long)
-     */
-    public ICategory getCategory(Long id) {
-        return null;
-    }
-
-	public List findCategory() {
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
 
 }

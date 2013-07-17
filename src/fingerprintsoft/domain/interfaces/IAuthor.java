@@ -1,5 +1,9 @@
 package fingerprintsoft.domain.interfaces;
 
+/**
+ *
+ * @author Jackie
+ */
 public interface IAuthor extends IEntity {
     
     /**
