@@ -2,7 +2,9 @@ package fingerprintsoft.utilities;
 
 import java.util.List;
 import java.util.ArrayList;
-
+/**
+ * @author Jackie
+ */
 public class AuthorList {
 	public static List ListOfAuthors(){
 		List author=new ArrayList();

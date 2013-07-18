@@ -5,7 +5,9 @@ import java.util.List;
 //import fingerprintsoft.domain.Book;
 //import fingerprintsoft.domain.interfaces.IAuthor;
 import fingerprintsoft.domain.interfaces.IBook;
-
+/**
+ * @author Jackie
+ */
 public interface IBookResource {
     List findBooks();
 
