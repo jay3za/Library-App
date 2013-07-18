@@ -42,9 +42,10 @@ public class BookTest extends TestCase {
 	 **/
 	public void testBookAuthor() {
 		IAuthor instance = new Author();
-		instance.setName(author);
+		instance.setName("Tommy");
 		
-		assertEquals( "", instance.getAuthor());
+		assertEquals( "Tommy", instance.getName());		
+		assertNotNull(instance);
 	}
 
 	/**
@@ -52,9 +53,10 @@ public class BookTest extends TestCase {
 	 **/
 	public void testBookCategory() {
 		ICategory instance = new Category();
-		ICategory expResult = null;
-		ICategory result = instance.getCategory();
-		assertEquals(expResult, result);
+		instance.setName("java for dummies");
+		
+		assertNotNull(instance);
+		assertEquals("java for dummies",instance.getName());
 	}
 
 	public class BookImpl extends Book {
