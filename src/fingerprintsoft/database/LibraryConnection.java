@@ -7,9 +7,9 @@ import java.sql.Statement;
 
 public class LibraryConnection {
 
-    public static final String URL_STRING = "jdbc:postgresql://localhost:5432/dbadmin";
-    public static final String DEFAULT_PASSWORD = "admin";
-    public static final String DEFAULT_USERNAME = "dbadmin";
+    public static final String URL_STRING = "jdbc:postgresql://localhost:5432/LibraryDatabase";
+    public static final String DEFAULT_PASSWORD = " ";
+    public static final String DEFAULT_USERNAME = " ";
     public static Connection conn;
 
     public static Connection getConnection() {

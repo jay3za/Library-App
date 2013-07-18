@@ -1,9 +1,5 @@
 package fingerprintsoft.resource;
 
-/**import java.sql.SQLException;
-import java.sql.Statement;
-import fingerprintsoft.database.LibraryConnection;**/
-
 import fingerprintsoft.database.LibraryConnection;
 import java.util.List;
 import fingerprintsoft.domain.Category;
@@ -145,5 +141,47 @@ public class JDBCCategoryResource implements ICategoryResource {
 		
         return null;
     }
+/**
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public List findCategory() {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public List findCategory(String name) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public void insert(ICategory category) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public void update(ICategory category) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public ICategory delete(Long id) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public ICategory getCategory(Long id) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
 
 }
