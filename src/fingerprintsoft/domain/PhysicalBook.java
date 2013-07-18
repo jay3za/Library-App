@@ -9,7 +9,7 @@ import fingerprintsoft.domain.interfaces.IMediaType;
 public class PhysicalBook extends Book {
     
     /**
-     * Default constructor, will set CoverType to Hard if none is passed through
+     * @param 
      */
     public PhysicalBook() {
         this(PhysicalCoverTypes.HARD);

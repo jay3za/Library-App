@@ -2,7 +2,7 @@ package fingerprintsoft.domain;
 
 import fingerprintsoft.domain.interfaces.ICategory;
 
-public abstract class Category extends AbstractEntity implements ICategory{
+public class Category extends AbstractEntity implements ICategory{
 	private String name;
 	private String type;
 	
@@ -28,7 +28,7 @@ public abstract class Category extends AbstractEntity implements ICategory{
 	/**
 	 * @param type
 	 */
-	public void SetType(String type){
+	public void setType(String type){
 		this.type=type;
 	}
 }
