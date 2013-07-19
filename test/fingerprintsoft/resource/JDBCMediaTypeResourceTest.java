@@ -26,11 +26,12 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	/**
 	 * Test of insert method, of class JDBCMediaTypeResource.
 	 */
-	public void testInsert_MediaType() {
+	public void testInsert_MediaType(IMediaType mediaType) {
 		System.out.println("insert");
-		IMediaTypeResources mediaType = "test";
 		IMediaTypeResources instance = new JDBCMediaTypeResource();
-		instance.insert(mediaType);
+		instance.insert("tester");
+		assertNotNull(instance);
+		assertEquals("tester", instance.insert());		
 	}
 
 	/**
@@ -38,9 +39,10 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	 */
 	public void testUpdate_MediaType() {
 		System.out.println("update");
-		MediaType mediaType = null;
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
-		instance.update(mediaType);
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
+		instance.update("tester");
+		assertNotNull(instance);
+		assertEquals("tester",instance.update());
 	}
 
 	/**
@@ -48,11 +50,11 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	 */
 	public void testDelete_String() {
 		System.out.println("delete");
-		String coverType = "";
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
-		MediaType expResult = null;
-		MediaType result = instance.delete(coverType);
-		assertEquals(expResult, result);
+		String coverType = "Hard";
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
+		instance.delete("Hard");
+		assertNull(instance);
+		assertEquals("Hard", instance.delete());		
 	}
 
 	/**
