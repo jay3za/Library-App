@@ -2,6 +2,7 @@ package fingerprintsoft.resource;
 
 import fingerprintsoft.domain.Category;
 import fingerprintsoft.domain.interfaces.ICategory;
+import fingerprintsoft.resource.interfaces.ICategoryResource;
 import java.util.List;
 import junit.framework.TestCase;
 
@@ -10,22 +11,17 @@ import junit.framework.TestCase;
  * @author Jackie
  */
 public class JDBCCategoryResourceTest extends TestCase {
-	
-	public JDBCCategoryResourceTest(String testName) {
-		super(testName);
-	}
 
 	/**
 	 * Test of getCategory method, of class JDBCCategoryResource.
 	 */
 	public void testGetCategory() {
 		System.out.println("getCategory");
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
 		List expResult = null;
 		List result = instance.getCategory();
+		assertNull(instance);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -34,10 +30,9 @@ public class JDBCCategoryResourceTest extends TestCase {
 	public void testInsert_Category() {
 		System.out.println("insert");
 		Category category = null;
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
+		assertNull(instance);
 		instance.insert(category);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -46,10 +41,9 @@ public class JDBCCategoryResourceTest extends TestCase {
 	public void testUpdate_Category() {
 		System.out.println("update");
 		Category category = null;
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
+		assertNull(instance);
 		instance.update(category);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -58,12 +52,11 @@ public class JDBCCategoryResourceTest extends TestCase {
 	public void testDelete_String() {
 		System.out.println("delete");
 		String name = "";
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
 		Category expResult = null;
 		Category result = instance.delete(name);
+		assertNull(instance);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -71,12 +64,11 @@ public class JDBCCategoryResourceTest extends TestCase {
 	 */
 	public void testFindCategory() {
 		System.out.println("findCategory");
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
 		List expResult = null;
 		List result = instance.findCategory();
+		assertNull(instance);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -85,12 +77,11 @@ public class JDBCCategoryResourceTest extends TestCase {
 	public void testFindCategory_String() {
 		System.out.println("findCategory");
 		String name = "";
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
 		List expResult = null;
 		List result = instance.findCategory(name);
+		assertNull(instance);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -99,10 +90,9 @@ public class JDBCCategoryResourceTest extends TestCase {
 	public void testInsert_ICategory() {
 		System.out.println("insert");
 		ICategory category = null;
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
+		assertNull(instance);
 		instance.insert(category);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -111,10 +101,9 @@ public class JDBCCategoryResourceTest extends TestCase {
 	public void testUpdate_ICategory() {
 		System.out.println("update");
 		ICategory category = null;
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
+		assertNull(instance);
 		instance.update(category);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -123,12 +112,11 @@ public class JDBCCategoryResourceTest extends TestCase {
 	public void testDelete_Long() {
 		System.out.println("delete");
 		Long id = null;
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
 		ICategory expResult = null;
 		ICategory result = instance.delete(id);
+		assertNull(instance);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -137,11 +125,10 @@ public class JDBCCategoryResourceTest extends TestCase {
 	public void testGetCategory_Long() {
 		System.out.println("getCategory");
 		Long id = null;
-		JDBCCategoryResource instance = new JDBCCategoryResource();
+		ICategoryResource instance = new JDBCCategoryResource();
 		ICategory expResult = null;
 		ICategory result = instance.getCategory(id);
+		assertNull(instance);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 }

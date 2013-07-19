@@ -1,6 +1,5 @@
 package fingerprintsoft.resource;
 
-
 import fingerprintsoft.resource.interfaces.IMediaTypeResources;
 import fingerprintsoft.domain.interfaces.IMediaType;
 import java.util.List;
@@ -62,10 +61,10 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	 */
 	public void testFindMediaType_0args() {
 		System.out.println("findMediaType");
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
-		List expResult = null;
-		List result = instance.findMediaType();
-		assertEquals(expResult, result);
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
+		instance.findMediaType();
+		assertNull(instance);
+		assertEquals(" " ,instance.findMediaType());
 	}
 
 	/**
@@ -74,10 +73,10 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	public void testFindMediaType_String() {
 		System.out.println("findMediaType");
 		String name = "";
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
-		List expResult = null;
-		List result = instance.findMediaType(name);
-		assertEquals(expResult, result);
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
+		instance.findMediaType();
+		assertNull(instance);
+		assertEquals("",instance.findMediaType());
 	}
 
 	/**
@@ -85,9 +84,10 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	 */
 	public void testInsert_IMediaType() {
 		System.out.println("insert");
-		IMediaType mediaType = null;
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
-		instance.insert(mediaType);
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
+		instance.insert("");
+		assertNull(instance);
+		assertEquals("",instance.insert());
 	}
 
 	/**
@@ -95,9 +95,10 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	 */
 	public void testUpdate_IMediaType() {
 		System.out.println("update");
-		IMediaType mediaType = null;
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
 		instance.update(mediaType);
+		assertNull(instance);
+		assertEquals(mediaType,instance.update());
 	}
 
 	/**
@@ -105,11 +106,10 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	 */
 	public void testDelete_Long() {
 		System.out.println("delete");
-		Long id = null;
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
-		IMediaType expResult = null;
-		IMediaType result = instance.delete(id);
-		assertEquals(expResult, result);
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
+		instance.delete("");
+		assertNull(instance);
+		assertEquals("" ,instance.delete());
 	}
 
 	/**
@@ -117,10 +117,10 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	 */
 	public void testGetAuthor() {
 		System.out.println("getAuthor");
-		Long id = null;
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
-		IMediaType expResult = null;
-		IMediaType result = instance.getAuthor(id);
-		assertEquals(expResult, result);
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
+		instance.getAuthor("");
+		assertNull(instance);
+		assertEquals("",instance.getAuthor());
+		
 	}
 }
