@@ -7,9 +7,9 @@ import java.sql.Statement;
 
 public class LibraryConnection {
 
-    public static final String URL_STRING = "jdbc:postgresql://localhost:5432/library_database";
-    public static final String DEFAULT_PASSWORD = "admin";
-    public static final String DEFAULT_USERNAME = "dbadmin";
+    public static final String URL_STRING = "jdbc:sqlexpress://localhost:5432/library_database";
+    public static final String DEFAULT_PASSWORD = "";
+    public static final String DEFAULT_USERNAME = "";
     public static Connection conn;
 
     public static Connection getConnection() {
@@ -21,21 +21,20 @@ public class LibraryConnection {
                 conn = DriverManager.getConnection(URL_STRING, DEFAULT_USERNAME, DEFAULT_PASSWORD);
             }
         } catch (Exception err) {
-            err.printStackTrace();
+            System.out.println(err);
 
         } finally {
             try {
-                if (statement != null)
+                if (statement != null){
                     statement.close();
-                if (conn != null)
+				}
+                if (conn != null){
                     conn.close();
+				}
             } catch (SQLException e) {
-                e.printStackTrace();
-
+                System.out.println(e);
             }
-
         }
         return conn;
-    }
-    
+	}    
 }

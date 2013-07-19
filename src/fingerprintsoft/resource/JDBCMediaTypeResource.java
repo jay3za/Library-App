@@ -40,22 +40,25 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 			System.out.println("Inserted record into table...");
 			
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }catch(Exception e){
       //Handle errors for Class.forName
-			e.printStackTrace();
+			System.out.println(e);
 		}finally{
       //finally block used to close resources
 			try{
-				if(stm!=null)
+				if(stm!=null){
 				 conn.close();
+				}
 				}catch(SQLException se){
+					System.out.println(se);
 					 }// do nothing
 			 try{
-				if(conn!=null)
+				if(conn!=null){
 				 conn.close();
+				}
 			}catch(SQLException se){
-				 se.printStackTrace();
+				 System.out.println(se);
 			}//end finally try
 		
 		}
@@ -88,19 +91,22 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 		
 		}catch(Exception e){
 		 //Handle errors for Class.forName
-			 e.printStackTrace();
+			 System.out.println(e);
 		}finally{
 		 //finally block used to close resources
 		 try{
-			 if(stm!=null)
+			 if(stm!=null){
 			   conn.close();
+			 }
 		 }catch(SQLException se){
+			 System.out.println(se);
 			}// do nothing
 		try{
-         if(conn!=null)
+         if(conn!=null){
             conn.close();
+		 }
 		 }catch(SQLException se){
-			 se.printStackTrace();
+			 System.out.println(se);
 			}//end finally try
 		}//end try
     }
@@ -123,21 +129,25 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 			rs.close();
 			}catch(SQLException se){
 			//Handle errors for JDBC
-				se.printStackTrace();
+				System.out.println(se);
 			}catch(Exception e){
 			//Handle errors for Class.forName
-				e.printStackTrace();
+				System.out.println(e);
 			}finally{
 			 //finally block used to close resources
 				 try{
-					if(stm!=null)
+					if(stm!=null){
 						conn.close();
+					}
 				 }catch(SQLException se){
+					 System.out.println(se);
 			}// do nothing
 			try{
-			  if(conn!=null) conn.close();
+			  if(conn!=null){
+				  conn.close();
+			  }
 		   }catch(SQLException se){
-			  se.printStackTrace();
+			  System.out.println(se);
 		   }//end finally try
 		}//end try
 		

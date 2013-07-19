@@ -1,7 +1,7 @@
 package fingerprintsoft.resource.interfaces;
 
 import java.util.List;
-//import fingerprintsoft.domain.MediaType;
+import fingerprintsoft.domain.MediaType;
 import fingerprintsoft.domain.interfaces.IMediaType;
 
 /**

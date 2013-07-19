@@ -1,10 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package fingerprintsoft.resource;
 
-import fingerprintsoft.domain.MediaType;
+
+import fingerprintsoft.resource.interfaces.IMediaTypeResources;
 import fingerprintsoft.domain.interfaces.IMediaType;
 import java.util.List;
 import junit.framework.TestCase;
@@ -14,22 +11,16 @@ import junit.framework.TestCase;
  * @author Jackie
  */
 public class JDBCMediaTypeResourceTest extends TestCase {
-	
-	public JDBCMediaTypeResourceTest(String testName) {
-		super(testName);
-	}
 
 	/**
 	 * Test of getMediaType method, of class JDBCMediaTypeResource.
 	 */
 	public void testGetMediaType() {
 		System.out.println("getMediaType");
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
-		List expResult = null;
-		List result = instance.getMediaType();
-		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
+		instance.findMediaType("tester");
+		assertNotNull(instance);
+		assertEquals("tester", instance.findMediaType());
 	}
 
 	/**
@@ -37,11 +28,9 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 	 */
 	public void testInsert_MediaType() {
 		System.out.println("insert");
-		MediaType mediaType = null;
-		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
+		IMediaTypeResources mediaType = "test";
+		IMediaTypeResources instance = new JDBCMediaTypeResource();
 		instance.insert(mediaType);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -52,8 +41,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		MediaType mediaType = null;
 		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
 		instance.update(mediaType);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -66,8 +53,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		MediaType expResult = null;
 		MediaType result = instance.delete(coverType);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -79,8 +64,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		List expResult = null;
 		List result = instance.findMediaType();
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -93,8 +76,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		List expResult = null;
 		List result = instance.findMediaType(name);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -105,8 +86,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		IMediaType mediaType = null;
 		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
 		instance.insert(mediaType);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -117,8 +96,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		IMediaType mediaType = null;
 		JDBCMediaTypeResource instance = new JDBCMediaTypeResource();
 		instance.update(mediaType);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -131,8 +108,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		IMediaType expResult = null;
 		IMediaType result = instance.delete(id);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 
 	/**
@@ -145,7 +120,5 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		IMediaType expResult = null;
 		IMediaType result = instance.getAuthor(id);
 		assertEquals(expResult, result);
-		// TODO review the generated test code and remove the default call to fail.
-		fail("The test case is a prototype.");
 	}
 }

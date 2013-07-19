@@ -1,9 +1,5 @@
 package fingerprintsoft.resource;
 
-/**import java.sql.SQLException;
-import java.sql.Statement;
-import fingerprintsoft.database.LibraryConnection;**/
-
 import fingerprintsoft.database.LibraryConnection;
 import java.util.List;
 import fingerprintsoft.domain.Category;
@@ -42,10 +38,10 @@ public class JDBCCategoryResource implements ICategoryResource {
 			System.out.println("Inserted record into table...");
 			
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }catch(Exception e){
       //Handle errors for Class.forName
-			e.printStackTrace();
+			System.out.println(e);
 		}finally{
       //finally block used to close resources
 			try{
@@ -57,7 +53,7 @@ public class JDBCCategoryResource implements ICategoryResource {
 				if(conn!=null)
 				 conn.close();
 			}catch(SQLException se){
-				 se.printStackTrace();
+				 System.out.println(se);
 			}//end finally try
 		
 		}
@@ -90,19 +86,22 @@ public class JDBCCategoryResource implements ICategoryResource {
 		
 		}catch(Exception e){
 		 //Handle errors for Class.forName
-			 e.printStackTrace();
+			 System.out.println(e);
 		}finally{
 		 //finally block used to close resources
 		 try{
-			 if(stm!=null)
+			 if(stm!=null){
 			   conn.close();
+			 }
 		 }catch(SQLException se){
+			 System.out.println(se);
 			}// do nothing
 		try{
-         if(conn!=null)
+         if(conn!=null){
             conn.close();
+		 }
 		 }catch(SQLException se){
-			 se.printStackTrace();
+			 System.out.println(se);
 			}//end finally try
 		}//end try
     }
@@ -125,67 +124,55 @@ public class JDBCCategoryResource implements ICategoryResource {
 			rs.close();
 			}catch(SQLException se){
 			//Handle errors for JDBC
-				se.printStackTrace();
+				System.out.println(se);
 			}catch(Exception e){
 			//Handle errors for Class.forName
-				e.printStackTrace();
+				System.out.println(e);
 			}finally{
 			 //finally block used to close resources
 				 try{
-					if(stm!=null)
+					if(stm!=null){
 						conn.close();
+					}
 				 }catch(SQLException se){
+					 System.out.println(se);
 			}// do nothing
 			try{
-			  if(conn!=null) conn.close();
+			  if(conn!=null){
+				  conn.close();
+			  }
 		   }catch(SQLException se){
-			  se.printStackTrace();
+			  System.out.println(se);
 		   }//end finally try
 		}//end try
 		
         return null;
     }
 /**
- * netbeans IDE implemented these
+ * netbeans added all these abstract methods
+ * @return 
  */
-	@Override
 	public List findCategory() {
-		return null;
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
-/**
- * netbeans IDE implemented these
- */
-	@Override
+
 	public List findCategory(String name) {
-		return null;
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
-/**
- * netbeans IDE implemented these
- */
-	@Override
+
 	public void insert(ICategory category) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
-/**
- * netbeans IDE implemented these
- */
-	@Override
+
 	public void update(ICategory category) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
-/**
- * netbeans IDE implemented these
- */
-	@Override
+
 	public ICategory delete(Long id) {
-		return null;
-	}
-/**
- * netbeans IDE implemented these
- */
-	@Override
-	public ICategory getCategory(Long id) {
-		return null;
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+	public ICategory getCategory(Long id) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
 }
