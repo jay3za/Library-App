@@ -7,9 +7,12 @@ import java.sql.Statement;
 
 public class LibraryConnection {
 
-    public static final String URL_STRING = "jdbc:sqlexpress://localhost:5432/library_database";
-    public static final String DEFAULT_PASSWORD = "";
-    public static final String DEFAULT_USERNAME = "";
+    /**
+	 * connection to a database established below
+	 */
+	public static final String URL_STRING = "jdbc:postgresql://localhost:5432/library_database";
+    public static final String DEFAULT_PASSWORD = "Whocares";
+    public static final String DEFAULT_USERNAME = "postgres";
     public static Connection conn;
 
     public static Connection getConnection() {

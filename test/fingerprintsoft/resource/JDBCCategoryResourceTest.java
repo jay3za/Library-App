@@ -1,9 +1,7 @@
 package fingerprintsoft.resource;
 
 import fingerprintsoft.domain.Category;
-import fingerprintsoft.domain.interfaces.ICategory;
 import fingerprintsoft.resource.interfaces.ICategoryResource;
-import java.util.List;
 import junit.framework.TestCase;
 
 /**
@@ -26,9 +24,8 @@ public class JDBCCategoryResourceTest extends TestCase {
 	 * Test of insert method, of class JDBCCategoryResource.
 	 */
 	public void testInsert_Category() {
-		Category category = "Test";
 		ICategoryResource instance = new JDBCCategoryResource();
-		instance.insert(category);
+		instance.insert("Test");
 		assertNull(instance);
 		assertEquals("Test",instance.insert());
 	}
@@ -37,11 +34,9 @@ public class JDBCCategoryResourceTest extends TestCase {
 	 * Test of update method, of class JDBCCategoryResource.
 	 */
 	public void testUpdate_Category() {
-		String category = "test1";
 		ICategoryResource instance = new JDBCCategoryResource();
-		instance.update(category);
+		instance.update("test1");
 		assertNull(instance);
-		assertEquals("test1",instance.update());
 		
 	}
 
@@ -49,11 +44,10 @@ public class JDBCCategoryResourceTest extends TestCase {
 	 * Test of delete method, of class JDBCCategoryResource.
 	 */
 	public void testDelete_String() {
-		String name = "";
 		ICategoryResource instance = new JDBCCategoryResource();
-		instance.delete(name);
+		instance.delete("test");
 		assertNull(instance);
-		assertEquals(name, instance.delete());
+		assertEquals("test", instance.delete());
 	}
 
 	/**
@@ -61,64 +55,38 @@ public class JDBCCategoryResourceTest extends TestCase {
 	 */
 	public void testFindCategory() {
 		ICategoryResource instance = new JDBCCategoryResource();
-		instance.findCategory("");
+		instance.findCategory("test");
 		assertNull(instance);
-		assertEquals("", instance.findCategory());
+		assertEquals("test", instance.findCategory());
 	}
 
 	/**
 	 * Test of findCategory method, of class JDBCCategoryResource.
 	 */
 	public void testFindCategory_String() {
-		String name = "";
 		ICategoryResource instance = new JDBCCategoryResource();
-		List expResult = null;
-		List result = instance.findCategory(name);
+		instance.findCategory("test");
 		assertNull(instance);
-		assertEquals(expResult, result);
+		assertEquals("test", instance.findCategory());
 	}
 
 	/**
 	 * Test of insert method, of class JDBCCategoryResource.
 	 */
 	public void testInsert_ICategory() {
-		ICategory category = null;
 		ICategoryResource instance = new JDBCCategoryResource();
+		instance.insert("test");
 		assertNull(instance);
-		instance.insert(category);
+		assertEquals("test",instance.insert());
 	}
 
 	/**
 	 * Test of update method, of class JDBCCategoryResource.
 	 */
 	public void testUpdate_ICategory() {
-		ICategory category = null;
 		ICategoryResource instance = new JDBCCategoryResource();
+		instance.update("update Test");
 		assertNull(instance);
-		instance.update(category);
-	}
-
-	/**
-	 * Test of delete method, of class JDBCCategoryResource.
-	 */
-	public void testDelete_Long() {
-		Long id = null;
-		ICategoryResource instance = new JDBCCategoryResource();
-		ICategory expResult = null;
-		ICategory result = instance.delete(id);
-		assertNull(instance);
-		assertEquals(expResult, result);
-	}
-
-	/**
-	 * Test of getCategory method, of class JDBCCategoryResource.
-	 */
-	public void testGetCategory_Long() {
-		Long id = null;
-		ICategoryResource instance = new JDBCCategoryResource();
-		ICategory expResult = null;
-		ICategory result = instance.getCategory(id);
-		assertNull(instance);
-		assertEquals(expResult, result);
+		assertEquals("update Test", instance.update());
 	}
 }
