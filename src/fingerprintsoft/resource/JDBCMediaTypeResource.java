@@ -156,35 +156,27 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 
 	public List findMediaType(String name) {
 		//needs to be implemented
-		throw new UnsupportedOperationException("Not supported yet.");
+		//how it should be implemented
+		//verify it has found the mediaType
+		return null;
 	}
 
 	public void insert(IMediaType mediaType) {
 		//needs to be implemented
-		throw new UnsupportedOperationException("Not supported yet.");
+		//how it should be implemented
+		//verify if it was implemented
 	}
 
 	public void update(IMediaType mediaType) {
 		//needs to be implemented
-		throw new UnsupportedOperationException("Not supported yet.");
+		//how it should be implemented
+		//verify it was updated
 	}
 
 	public IMediaType delete() {
 		//needs to be implemented
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
-
-	public void getAuthor(IMediaType mediaType) {
-		//needs to be implemented
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
-
-	public void insert(String electronic) {
-		throw new UnsupportedOperationException("Not supported yet.");
-	}
-
-	public void update(String electronic) {
-		//needs to be implemented
-		throw new UnsupportedOperationException("Not supported yet.");
+		//how it should be implemented
+		// verify it was deleted
+		return null;
 	}
 }

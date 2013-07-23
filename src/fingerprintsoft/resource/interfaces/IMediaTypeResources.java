@@ -27,17 +27,17 @@ public interface IMediaTypeResources {
 	 * @param mediaType
 	 */
 	void update(IMediaType mediaType);
-
-    /**
+/**
+    
 	 *
 	 * @param mediaType
-	 */
+	 
 	public IMediaType delete();
 
-    /**
+    
 	 *
 	 * @param mediaType
-	 */
+	
 	void getAuthor(IMediaType mediaType);
 
 	//netbeans insert
@@ -52,5 +52,5 @@ public interface IMediaTypeResources {
 		public coverType() {
 		}
 	}
-	
+**/
 }

@@ -28,7 +28,4 @@ public class MediaTypeTest extends TestCase {
 		assertEquals("Physical Media Type", instance.getType());
 		assertNotNull(instance);
 	}
-
-	public class MediaTypeImpl extends MediaType {
-	}
 }
