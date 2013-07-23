@@ -29,8 +29,7 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		System.out.println("insert");
 		IMediaTypeResources instance = new JDBCMediaTypeResource();
 		instance.insert("tester");
-		assertNotNull(instance);
-		assertEquals("tester", instance.insert());		
+		assertNotNull(instance);		
 	}
 
 	/**
@@ -41,7 +40,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		IMediaTypeResources instance = new JDBCMediaTypeResource();
 		instance.update("tester");
 		assertNotNull(instance);
-		assertEquals("tester",instance.update());
 	}
 
 	/**
@@ -52,8 +50,7 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		String coverType = "Hard";
 		IMediaTypeResources instance = new JDBCMediaTypeResource();
 		instance.delete("Hard");
-		assertNull(instance);
-		assertEquals("Hard", instance.delete());		
+		assertNull(instance);	
 	}
 
 	/**
@@ -87,7 +84,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		IMediaTypeResources instance = new JDBCMediaTypeResource();
 		instance.insert("");
 		assertNull(instance);
-		assertEquals("",instance.insert());
 	}
 
 	/**
@@ -98,7 +94,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		IMediaTypeResources instance = new JDBCMediaTypeResource();
 		instance.update(mediaType);
 		assertNull(instance);
-		assertEquals(mediaType,instance.update());
 	}
 
 	/**
@@ -109,7 +104,6 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		IMediaTypeResources instance = new JDBCMediaTypeResource();
 		instance.delete("");
 		assertNull(instance);
-		assertEquals("" ,instance.delete());
 	}
 
 	/**
@@ -120,7 +114,5 @@ public class JDBCMediaTypeResourceTest extends TestCase {
 		IMediaTypeResources instance = new JDBCMediaTypeResource();
 		instance.getAuthor("");
 		assertNull(instance);
-		assertEquals("",instance.getAuthor());
-		
 	}
 }

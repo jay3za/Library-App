@@ -8,15 +8,14 @@ import fingerprintsoft.domain.interfaces.ICategory;
  * @author jackie
  */
 public interface ICategoryResource {
-    List findCategory();
-
-    List findCategory(String name);
-
+	List findCategory(String name);
+	
     void insert(ICategory category);
 
     void update(ICategory category);
 
     ICategory delete(Long id);
 
-    ICategory getCategory(Long id);
+    ICategory getCategory(Long id);	
+	
 }

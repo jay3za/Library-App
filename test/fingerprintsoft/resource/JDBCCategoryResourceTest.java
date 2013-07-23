@@ -14,10 +14,10 @@ public class JDBCCategoryResourceTest extends TestCase {
 	 * Test of getCategory method, of class JDBCCategoryResource.
 	 */
 	public void testGetCategory() {
+		String category="tester";
 		ICategoryResource instance = new JDBCCategoryResource();
-		instance.getCategory("");
+		instance.getCategory();
 		assertNull(instance);
-		assertEquals(" ", instance.getCategory());
 	}
 
 	/**
@@ -25,9 +25,8 @@ public class JDBCCategoryResourceTest extends TestCase {
 	 */
 	public void testInsert_Category() {
 		ICategoryResource instance = new JDBCCategoryResource();
-		instance.insert("Test");
+		instance.insert("test");
 		assertNull(instance);
-		assertEquals("Test",instance.insert());
 	}
 
 	/**
@@ -47,7 +46,6 @@ public class JDBCCategoryResourceTest extends TestCase {
 		ICategoryResource instance = new JDBCCategoryResource();
 		instance.delete("test");
 		assertNull(instance);
-		assertEquals("test", instance.delete());
 	}
 
 	/**
@@ -67,7 +65,6 @@ public class JDBCCategoryResourceTest extends TestCase {
 		ICategoryResource instance = new JDBCCategoryResource();
 		instance.findCategory("test");
 		assertNull(instance);
-		assertEquals("test", instance.findCategory());
 	}
 
 	/**
@@ -77,7 +74,6 @@ public class JDBCCategoryResourceTest extends TestCase {
 		ICategoryResource instance = new JDBCCategoryResource();
 		instance.insert("test");
 		assertNull(instance);
-		assertEquals("test",instance.insert());
 	}
 
 	/**
@@ -87,6 +83,5 @@ public class JDBCCategoryResourceTest extends TestCase {
 		ICategoryResource instance = new JDBCCategoryResource();
 		instance.update("update Test");
 		assertNull(instance);
-		assertEquals("update Test", instance.update());
 	}
 }
