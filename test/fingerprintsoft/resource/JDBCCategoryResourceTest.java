@@ -14,10 +14,11 @@ public class JDBCCategoryResourceTest extends TestCase {
 	 * Test of getCategory method, of class JDBCCategoryResource.
 	 */
 	public void testGetCategory() {
-		String category="tester";
 		ICategoryResource instance = new JDBCCategoryResource();
-		instance.getCategory();
+		instance.getCategory("Java");
 		assertNull(instance);
+		assertEquals("Java",instance.getCategory());
+		//assertNotNull("Java",instance.getCategory());
 	}
 
 	/**

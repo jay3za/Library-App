@@ -8,15 +8,38 @@ import fingerprintsoft.domain.interfaces.IMediaType;
  * @author jackie
  */
 public interface IMediaTypeResources {
-    List findMediaType();
 
-    List findMediaType(String name);
+    /**
+	 *
+	 * @param name
+	 * @return
+	 */
+	List findMediaType(String name);
 
-    void insert(IMediaType mediaType);
+    /**
+	 *
+	 * @param mediaType
+	 */
+	void insert(IMediaType mediaType);
 
-    void update(IMediaType mediaType);
+    /**
+	 *
+	 * @param mediaType
+	 */
+	void update(IMediaType mediaType);
 
-    IMediaType delete(Long id);
+    /**
+	 *
+	 * @param mediaType
+	 */
+	void delete(IMediaType mediaType);
 
-    IMediaType getAuthor(Long id);
+    /**
+	 *
+	 * @param mediaType
+	 */
+	void getAuthor(IMediaType mediaType);
+
+	public void insert(String electronic);
+	
 }

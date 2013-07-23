@@ -14,12 +14,7 @@ public class SearchServices {
 		Scanner searchName = new Scanner(System.in);
 		System.out.println("Whant is the book name you want to search?");
 		String input = searchName.next().toLowerCase();
-		
-		while (input.hasNext()){
-			name=input.next();
-			if (name equals searchName);
-		}
-		
+	
 	} 
 }
 

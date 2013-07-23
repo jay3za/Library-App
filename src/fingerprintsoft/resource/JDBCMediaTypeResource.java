@@ -188,4 +188,16 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
     public IMediaType getAuthor(Long id) {
         return null;
     }
+
+	public void delete(IMediaType mediaType) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	public void getAuthor(IMediaType mediaType) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	public void insert(String electronic) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
 }
