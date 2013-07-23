@@ -32,7 +32,7 @@ public interface IMediaTypeResources {
 	 *
 	 * @param mediaType
 	 */
-	void delete(IMediaType mediaType);
+	public IMediaType delete();
 
     /**
 	 *
@@ -40,6 +40,17 @@ public interface IMediaTypeResources {
 	 */
 	void getAuthor(IMediaType mediaType);
 
+	//netbeans insert
 	public void insert(String electronic);
+
+	public void update(String electronic);
+
+	//public void delete(String electronic);
+
+	public static class coverType {
+
+		public coverType() {
+		}
+	}
 	
 }

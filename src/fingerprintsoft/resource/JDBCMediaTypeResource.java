@@ -154,50 +154,37 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
         return null;
     }
 
-   /**
-	* Netbeans inserted these methods 
-	*/
-    public List findMediaType() {
-        return null;
-    }
-/**
- * netbeans IDE implemented these
- */
-    public List findMediaType(String name) {
-        return null;
-    }
-/**
- * netbeans IDE implemented these
- */
-     public void insert(IMediaType mediaType) {
-    }
-/**
- * netbeans IDE implemented these
- */
-    public void update(IMediaType mediaType) {
-    }
-/**
- * netbeans IDE implemented these
- */
-    public IMediaType delete(Long id) {
-        return null;
-    }
-/**
- * netbeans IDE implemented these
- */
-    public IMediaType getAuthor(Long id) {
-        return null;
-    }
+	public List findMediaType(String name) {
+		//needs to be implemented
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
 
-	public void delete(IMediaType mediaType) {
+	public void insert(IMediaType mediaType) {
+		//needs to be implemented
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	public void update(IMediaType mediaType) {
+		//needs to be implemented
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	public IMediaType delete() {
+		//needs to be implemented
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	public void getAuthor(IMediaType mediaType) {
+		//needs to be implemented
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	public void insert(String electronic) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+
+	public void update(String electronic) {
+		//needs to be implemented
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 }
