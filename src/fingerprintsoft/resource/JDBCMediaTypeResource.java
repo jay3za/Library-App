@@ -13,11 +13,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Logger;
 
 /**
  * @author jackie
  */
 public class JDBCMediaTypeResource implements IMediaTypeResources{
+	private static Logger LOGGER = Logger.getLogger("InfoLogging");
 	Statement stm=null;
 	Connection conn = LibraryConnection.getConnection();
     /**
@@ -37,7 +39,7 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 			//creating a new statement to insert into the database
             stm = conn.createStatement();
 			stm.executeUpdate(sql);
-			System.out.println("Inserted record into table...");
+			LOGGER.info ("Inserted record into table...");
 			
         } catch (SQLException e) {
             System.out.println(e);
@@ -117,7 +119,7 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
     public MediaType delete(String coverType) {
         try{
 			//creates a statement to lookup in database
-			stm=conn.createStatement();
+			stm = conn.createStatement();
 			String sql = "DELET Type " +
 					   "WHERE name='tester'";
 			stm.executeUpdate(sql);
@@ -154,29 +156,53 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
         return null;
     }
 
+	//needs to be implemented
 	public List findMediaType(String name) {
-		//needs to be implemented
+		
 		//how it should be implemented
 		//verify it has found the mediaType
+		//print out variables that has been found
+		LOGGER.info("");
 		return null;
 	}
-
+		
+		
+	//needs to be implemented
 	public void insert(IMediaType mediaType) {
-		//needs to be implemented
+		String x = "physical";
+		String y = "electronic";
+		
 		//how it should be implemented
+		if ("physical".equals(y)){
+			LOGGER.info("The type is incorrect can only be electronic for this field" + x);
+		}else if ("electronic".equals(x)){
+			LOGGER.info("The type is incorrect");
+		}else{
+			LOGGER.info("Correct media type inserted");
+		}
 		//verify if it was implemented
+		
+		//print variables that have been inserted
+		LOGGER.info("");
+		
 	}
 
+	//needs to be implemented
 	public void update(IMediaType mediaType) {
-		//needs to be implemented
+		
 		//how it should be implemented
 		//verify it was updated
+		//print the variables that has been updated
+		LOGGER.info("");
 	}
 
+	//needs to be implemented
 	public IMediaType delete() {
-		//needs to be implemented
+		
 		//how it should be implemented
-		// verify it was deleted
+		//verify it was deleted
+		//print the variables that was deleted
+		System.out.println();
 		return null;
 	}
 }
