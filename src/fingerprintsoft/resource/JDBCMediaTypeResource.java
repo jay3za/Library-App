@@ -13,15 +13,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * @author jackie
  */
 public class JDBCMediaTypeResource implements IMediaTypeResources{
-	private static Logger LOGGER = Logger.getLogger("InfoLogging");
+	private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 	Statement stm=null;
 	Connection conn = LibraryConnection.getConnection();
+	String x = "physical";
+	String y = "electronic";
     /**
      * Fetches the list of media types
      * @return mediaType
@@ -35,12 +38,34 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
      */
     public void insert(MediaType mediaType) {
 		try{
-			String sql = "INSERT INTO mediaType " + "VALUES ('testersmtype')";
+			PreparedStatement ps = conn.prepareStatement("Insert Media Type values(?)");
+			String sql = "INSERT INTO media_type(media_type,book_number) VALUES ('testersmtype',1)";
+			
 			//creating a new statement to insert into the database
             stm = conn.createStatement();
 			stm.executeUpdate(sql);
+			//ps.setMediaType(1);
+			ResultSet rs=ps.executeQuery();
+			 if (rs.next()) {
+				LOGGER.info("The employee with empno 9999 already exists.");
+				rs.close();
+			 }
 			LOGGER.info ("Inserted record into table...");
-			
+			ps.close();
+			//how it should be implemented
+		if ("physical".equals(y)){
+			LOGGER.log(Level.INFO, "The type is incorrect can only be electronic for this field.", x);
+		}else if ("electronic".equals(x)){
+			LOGGER.info("The type is incorrect");
+		}else{
+			LOGGER.info("Correct media type inserted");
+		}
+		//verify if it was implemented
+		//prepared statement should verify the input
+		
+		//print variables that have been inserted
+		LOGGER.info("");
+		
         } catch (SQLException e) {
             System.out.println(e);
         }catch(Exception e){
@@ -77,12 +102,11 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 			//creates new connection for creating a statment
 			stm = conn.createStatement();
 		
-			String sql = "UPDATE mediaType " +
-					   "SET type = 'test' WHERE type in (tester)";
+			String sql = "UPDATE mediaType SET type = 'test' WHERE type in (tester)";
 			
 			//executes the update statement
 			stm.executeUpdate(sql);
-			ResultSet rs = null;
+			ResultSet rs = ps.executeQuery();
 			//try and catch inserted by IDE
 			rs = stm.executeQuery(sql);
 			while(rs.next()){
@@ -90,7 +114,7 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 				 String name  = rs.getString("testertype");
 			 }
 			rs.close();
-		
+			ps.close();
 		}catch(Exception e){
 		 //Handle errors for Class.forName
 			 System.out.println(e);
@@ -120,8 +144,7 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
         try{
 			//creates a statement to lookup in database
 			stm = conn.createStatement();
-			String sql = "DELET Type " +
-					   "WHERE name='tester'";
+			String sql = "DELET Type WHERE name='tester'";
 			stm.executeUpdate(sql);
 			sql = "SELECT type FROM mediaType";
 			ResultSet rs = stm.executeQuery(sql);
@@ -165,35 +188,19 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 		LOGGER.info("");
 		return null;
 	}
-		
-		
-	//needs to be implemented
-	public void insert(IMediaType mediaType) {
-		String x = "physical";
-		String y = "electronic";
-		
-		//how it should be implemented
-		if ("physical".equals(y)){
-			LOGGER.info("The type is incorrect can only be electronic for this field" + x);
-		}else if ("electronic".equals(x)){
-			LOGGER.info("The type is incorrect");
-		}else{
-			LOGGER.info("Correct media type inserted");
-		}
-		//verify if it was implemented
-		
-		//print variables that have been inserted
-		LOGGER.info("");
-		
-	}
 
+
+		
 	//needs to be implemented
 	public void update(IMediaType mediaType) {
 		
 		//how it should be implemented
+		//if(==true){
+			
+		//}
 		//verify it was updated
 		//print the variables that has been updated
-		LOGGER.info("");
+		//LOGGER.info("");
 	}
 
 	//needs to be implemented
@@ -204,5 +211,9 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 		//print the variables that was deleted
 		System.out.println();
 		return null;
+	}
+
+	public void insert(IMediaType mediaType) {
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 }
