@@ -1,6 +1,5 @@
 package fingerprintsoft.domain.services;
 
-import fingerprintsoft.domain.Book;
 import fingerprintsoft.domain.interfaces.IBook;
 import java.util.Scanner;
 
@@ -20,7 +19,7 @@ public class SearchServices{
 		
 		Scanner searchName = new Scanner(System.in);
 		System.out.println("Whant is the book name you want to search?");
-		String input = searchName.next();
+		//String input  = searchName.next();
 		
 			while (input.hasNext()){
 			String name = input.next();
