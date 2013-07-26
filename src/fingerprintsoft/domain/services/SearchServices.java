@@ -18,10 +18,6 @@ public class SearchServices{
 		String input = searchword.next();
 		char firstLetter = input.charAt(0);
 		
-		
-		//Scanner input = new Scanner();
-		
-
 		Scanner searchName = new Scanner(System.in);
 		System.out.println("Whant is the book name you want to search?");
 		String input = searchName.next();
@@ -33,16 +29,6 @@ public class SearchServices{
 			}
 		}
 			
-	}
-	/**
-	 *
-	 */
-	public void BookSearch(){
-		//search for a book
-		Scanner searchName = new Scanner(System.in);
-		System.out.println("Whant is the book name you want to search?");
-		String input = searchName.next().toLowerCase();
-		input.close();	
 	}
 
 }
