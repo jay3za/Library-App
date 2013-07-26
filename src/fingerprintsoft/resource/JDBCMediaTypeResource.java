@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 /**
  * @author jackie
  */
-public class JDBCMediaTypeResource implements IMediaTypeResources extends AddService {
+public class JDBCMediaTypeResource implements IMediaTypeResources{
 	private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 	Statement stm=null;
 	Connection conn = LibraryConnection.getConnection();
@@ -112,7 +112,7 @@ public class JDBCMediaTypeResource implements IMediaTypeResources extends AddSer
 		try{
          if(conn!=null){
             conn.close();
-		 }
+			}
 		 }catch(SQLException se){
 			 System.out.println(se);
 			}//end finally try
@@ -191,22 +191,11 @@ public class JDBCMediaTypeResource implements IMediaTypeResources extends AddSer
 	//needs to be implemented
 	public IMediaType delete() {
 		//needs to delete the record form the database
-//need to create a list entry to add to the database that can be edited
-		while((x).equals x){
-		 try{
-			 if (mediaType == x){
-				 LOGGER.info("The type is incorrect");
-				list.remove(mediaType);
-			 }catch(InputMismatchException error){
-				LOGGER.info("<ERROR> Please enter a valid value");
-				System.out.print(error);
-			 }
-		}
-		
+		//need to create a list entry to add to the database that can be edited
+				
 		//verify it was deleted
 		//print the variables that was deleted
-		return null;
-		
+		return null;		
 }
 
 	public void insert(IMediaType mediaType) {

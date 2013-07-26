@@ -4,44 +4,153 @@
  */
 package fingerprintsoft.domain.services;
 
-import java.util.InputMismatchException;
+import fingerprintsoft.database.LibraryConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
  * @author Jackie
  */
 public class DeleteServices {
-	public void removeBook(){
-		int i = 0;
-		System.out.println("---------------------------------------------------------");
-		System.out.println("> Here are all the books registered in the library: ");
-		System.out.println("---------------------------------------------------------");
- 
-		while (i < BookList.size() && BookList.size() > 0){//show the user the list of all the books
-			System.out.printf("\n> Book number %s:\n%s",i+1,BookList.get(i));
-			i = i+1;
-		}//end of while loop.
- 
-		System.out.println("\n\n> Choose an available book from the above list and write down it's number: ");
-		int BookChoice = choiceInput.nextInt()-1;//register user's book choice.
- 
-		while(choice == 5){
-			try{
-				if (BookChoice > 0 && BookChoice < BookList.size() && BookList.get(BookChoice).status.equalsIgnoreCase("Available")){//Check if the book to be borrowed is available.
-					//Print the borrowed book information and change the book status to borrowed.
-					BookList.remove(BookChoice);
-					System.out.printf("\n> You have chosen to delete the following book: %s\n", BookList.get(BookChoice));
-					System.out.printf("\n> The Book %s is deleted.\n", BookList.get(BookChoice));
-					choice = 7;
-				}
-			}catch(InputMismatchException error){
-				System.out.println("<ERROR> Please enter a number of book from the list: ");
-				choiceInput.nextInt();
-				choice = 5;
-			}catch(IndexOutOfBoundsException error){
-				System.out.println("<ERROR> Please enter a number of book from the list: ");
-				choice = 5;
+	public void LibraryUpdate() throws SQLException{
+		int ret_code;
+		
+		//Establish a connection
+	   Connection conn = LibraryConnection.getConnection();
+	
+	   // update mediaType table
+	   try {
+		   int book_number[] = {4, 7};
+		   String media_type[] = {"PHYSICAL","ELECTRONIC"};
+
+		   String sql1 = "SELECT * FROM media_type" ;
+		   String sql2 = "ALTER media_type UPDATE (book_number,media_type)";
+
+		   PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+		   PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+		   
+		   for (int numx=0;numx<3;numx++) {
+				pstmt1.setInt(1, book_number[numx]);
+				ResultSet rset = pstmt1.executeQuery();
+				if (rset.next()) {
+					System.out.println("The mediatype" + book_number[numx] + " already exists.");
+					rset.close();
 			}
-		}		
+		   else
+			{
+				pstmt2.setInt(1, book_number[numx]);
+				pstmt2.setString(2, media_type[numx]);
+				pstmt2.executeUpdate(); }
+		   } // End of for loop
+		   pstmt1.close();
+		   pstmt2.close();
+		   conn.close();
+		   } catch (SQLException e) {
+			   ret_code = e.getErrorCode(); 
+				System.err.println(ret_code + e.getMessage()); 
+				conn.close();
+		   }
+	   
+	   //author table update
+	   try {
+		   int number[] = {1001, 1002, 7788};
+		   String name[] = {"JOHN/ted","DAVID/ted","ORATEST/ted"};
+
+		   String sql1 = "SELECT * FROM author" ;
+		   String sql2 = "ALTER TABLE author VALUES (number,name)";
+
+		   PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+		   PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+		   
+		   for (int numx=0;numx<3;numx++) {
+				pstmt1.setInt(1, number[numx]);
+				ResultSet rset = pstmt1.executeQuery();
+				if (rset.next()) {
+					System.out.println("The book number " + number[numx] + " already exists.");
+					rset.close();
+			}
+		   else
+			{
+				pstmt2.setInt(1, number[numx]);
+				pstmt2.setString(2, name[numx]);
+				pstmt2.executeUpdate(); }
+		   } // End of for loop
+		   pstmt1.close();
+		   pstmt2.close();
+		   conn.close();
+		   } catch (SQLException e) {
+			   ret_code = e.getErrorCode(); 
+				System.err.println(ret_code + e.getMessage()); 
+				conn.close();
+		   }
+	   //book table UPDATE
+	   try {
+		   int number[] = {1001, 1002, 7788};
+		   String name[] = {"JOHNTEST/TED","DAVIDTEST/TED","ORATESTTEST/TED"};
+
+		   String sql1 = "SELECT * FROM book" ;
+		   String sql2 = "ALTER TABLE book VALUES (number,name)";
+
+		   PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+		   PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+		   
+		   for (int numx=0;numx<3;numx++) {
+				pstmt1.setInt(1, number[numx]);
+				ResultSet rset = pstmt1.executeQuery();
+				if (rset.next()) {
+					System.out.println("The book number " + number[numx] + " already exists.");
+					rset.close();
+			}
+		   else
+			{
+				pstmt2.setInt(1, number[numx]);
+				pstmt2.setString(2, name[numx]);
+				pstmt2.executeUpdate(); }
+		   } // End of for loop
+		   pstmt1.close();
+		   pstmt2.close();
+		   conn.close();
+		   } catch (SQLException e) {
+			   ret_code = e.getErrorCode(); 
+				System.err.println(ret_code + e.getMessage()); 
+				conn.close();
+		   }
+	   
+	   // UPDATE category table
+	   try {
+		   int book_number[] = {1001, 1002, 7788};
+		   String category[] = {"JAVA/TED","HIBERNATE/TED","JDBC/TED"};
+
+		   String sql1 = "SELECT * FROM category" ;
+		   String sql2 = "ALTER TABLE category VALUES (book_number,category)";
+
+		   PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+		   PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+		   
+		   for (int numx=0;numx<3;numx++) {
+				pstmt1.setInt(1, book_number[numx]);
+				ResultSet rset = pstmt1.executeQuery();
+				if (rset.next()) {
+					System.out.println("The category " + book_number[numx] + " already exists.");
+					rset.close();
+			}
+		   else
+			{
+				pstmt2.setInt(1, book_number[numx]);
+				pstmt2.setString(2, category[numx]);
+				pstmt2.executeUpdate(); }
+		   } // End of for loop
+		   pstmt1.close();
+		   pstmt2.close();
+		   conn.close();
+		   } catch (SQLException e) {
+			   ret_code = e.getErrorCode(); 
+				System.err.println(ret_code + e.getMessage()); 
+				conn.close();
+		   }
 	}
+		
 }
