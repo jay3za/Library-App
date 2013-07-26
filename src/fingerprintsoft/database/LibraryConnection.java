@@ -7,14 +7,14 @@ import java.sql.Statement;
 
 public class LibraryConnection {
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
     /**
 	 * connection to a database established below
 	 */
 	public static final String URL_STRING = "jdbc:postgresql://localhost:5432/library_database";
     public static final String DEFAULT_PASSWORD = "Whocares";
     public static final String DEFAULT_USERNAME = "postgres";
-=======
+/**=======
 <<<<<<< HEAD
     public static final String URL_STRING = "jdbc:postgresql://localhost:5432/LibraryDatabase";
     public static final String DEFAULT_PASSWORD = " ";
@@ -24,7 +24,7 @@ public class LibraryConnection {
     public static final String DEFAULT_PASSWORD = "admin";
     public static final String DEFAULT_USERNAME = "dbadmin";
 >>>>>>> jackie_branch
->>>>>>> master
+>>>>>>> master**/
     public static Connection conn;
 
     public static Connection getConnection() {
