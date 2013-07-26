@@ -3,23 +3,18 @@ package fingerprintsoft.resource;
 //import java.sql.SQLException;
 //import java.sql.Statement;
 import fingerprintsoft.database.LibraryConnection;
-import java.util.List;
-//import fingerprintsoft.database.LibraryConnection;
 import fingerprintsoft.domain.MediaType;
 import fingerprintsoft.domain.interfaces.IMediaType;
 import fingerprintsoft.resource.interfaces.IMediaTypeResources;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * @author jackie
  */
-public class JDBCMediaTypeResource implements IMediaTypeResources{
+public class JDBCMediaTypeResource implements IMediaTypeResources extends AddService {
 	private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 	Statement stm=null;
 	Connection conn = LibraryConnection.getConnection();
@@ -168,20 +163,11 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 
 	//needs to be implemented
 	public List findMediaType(String name) {
+		return null;
 		//need to lookup the data and return from database and compared
 		
 		//how it should be implemented
-		if ("physical".equals(y)){
-			LOGGER.log(Level.INFO, "The type is incorrect can only be electronic for this field.", x);
-		}else if ("electronic".equals(x)){
-			LOGGER.info("The type is incorrect");
-		}else{
-			LOGGER.info("Correct media type found");
-		}
-		//verify it has found the mediaType
-		//print out variables that has been found
-		LOGGER.info("");
-		return null;
+		
 	}
 		
 	//needs to be implemented
@@ -205,20 +191,23 @@ public class JDBCMediaTypeResource implements IMediaTypeResources{
 	//needs to be implemented
 	public IMediaType delete() {
 		//needs to delete the record form the database
-		
-		//how it should be implemented
-		if ("physical".equals(y)){
-			LOGGER.log(Level.INFO, "The type is incorrect can only be electronic for this field.", x);
-		}else if ("electronic".equals(x)){
-			LOGGER.info("The type is incorrect");
-		}else{
-			LOGGER.info("Correct media type deleted");
+//need to create a list entry to add to the database that can be edited
+		while((x).equals x){
+		 try{
+			 if (mediaType == x){
+				 LOGGER.info("The type is incorrect");
+				list.remove(mediaType);
+			 }catch(InputMismatchException error){
+				LOGGER.info("<ERROR> Please enter a valid value");
+				System.out.print(error);
+			 }
 		}
+		
 		//verify it was deleted
 		//print the variables that was deleted
-		System.out.println();
 		return null;
-	}
+		
+}
 
 	public void insert(IMediaType mediaType) {
 			//needs to insert new data into the database		
