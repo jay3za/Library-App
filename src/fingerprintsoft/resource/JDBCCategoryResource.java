@@ -149,8 +149,29 @@ public class JDBCCategoryResource implements ICategoryResource {
         return null;
     }
 /**
+<<<<<<< HEAD
  * netbeans added all these abstract methods
  * @return 
+=======
+<<<<<<< HEAD
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public List findCategory() {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public List findCategory(String name) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans added these from abstract category method
+=======
+ * netbeans IDE implemented these
+>>>>>>> master
  */
 	public List findCategory() {
 		throw new UnsupportedOperationException("Not supported yet.");
@@ -159,6 +180,7 @@ public class JDBCCategoryResource implements ICategoryResource {
 	public List findCategory(String name) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
+<<<<<<< HEAD
 
 	public void insert(ICategory category) {
 		throw new UnsupportedOperationException("Not supported yet.");
@@ -168,11 +190,55 @@ public class JDBCCategoryResource implements ICategoryResource {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
+=======
+/**
+ * netbeans IDE implemented these
+>>>>>>> jackie_branch
+ */
+	@Override
+	public void insert(ICategory category) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+<<<<<<< HEAD
+ * netbeans added these from abstract category method
+=======
+ * netbeans IDE implemented these
+>>>>>>> jackie_branch
+ */
+	@Override
+	public void update(ICategory category) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+<<<<<<< HEAD
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public ICategory delete(Long id) {
+		throw new UnsupportedOperationException("Not supported yet.");
+	}
+/**
+ * netbeans added these from abstract category method
+ */
+	@Override
+	public ICategory getCategory(Long id) {
+		throw new UnsupportedOperationException("Not supported yet.");
+=======
+ * netbeans IDE implemented these
+ */
+	@Override
+>>>>>>> master
 	public ICategory delete(Long id) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	public ICategory getCategory(Long id) {
+<<<<<<< HEAD
 		throw new UnsupportedOperationException("Not supported yet.");
+=======
+		return null;
+>>>>>>> jackie_branch
+>>>>>>> master
 	}
 }
